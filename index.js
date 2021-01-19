@@ -1,6 +1,9 @@
+//calling inquirer npm
 const inquirer = require('inquirer');
+//calling the filesystem
 const fs = require('fs');
 ​
+//Questions that will be prompted in terminal...
 inquirer
   .prompt([
     {
@@ -45,21 +48,21 @@ inquirer
       name: 'test',
       message: 'Command to run tests',
         
-  },
-  {
-    type: 'input',
-    name: 'questions',
-    message: 'What does the user need to know about using this repository?',
-      
-  },
-  {
-    type: 'input',
-    name: 'contributions',
-    message: 'What does the user need to know about contributing to this repository?',
-      
-  },
+    },
+    {
+      type: 'input',
+      name: 'questions',
+      message: 'What does the user need to know about using this repository?',
+        
+    },
+    {
+      type: 'input',
+      name: 'contributions',
+      message: 'What does the user need to know about contributing to this repository?',
+        
+    },
 
-  ])
+    ])
   .then((answers) => {
 ​
     console.log(answers)

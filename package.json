@@ -1,0 +1,24 @@
+{
+  "name": "Generate-ReadMe",
+  "version": "1.0.0",
+  "description": "GIVEN a command-line application that accepts user input\r WHEN I am prompted for information about my application repository\r THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions\r WHEN I enter my project title\r THEN this is displayed as the title of the README\r WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions\r THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests\r WHEN I choose a license for my application from a list of options\r THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under\r WHEN I enter my GitHub username\r THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile\r WHEN I enter my email address\r THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions\r WHEN I click on the links in the Table of Contents\r THEN I am taken to the corresponding section of the README",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmsaunders7/Generate-ReadMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmsaunders7/Generate-ReadMe/issues"
+  },
+  "homepage": "https://github.com/kmsaunders7/Generate-ReadMe#readme"
+}
