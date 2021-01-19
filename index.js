@@ -5,53 +5,42 @@ inquirer
   .prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name?',
+      name: 'username',
+      message: 'What is your GitHub username?',
     },
     {
       type: 'input',
-      message: 'Where do you live?',
-      name: 'location',
+      name: 'email',
+      message: 'What is your email?',
+      
     },
     {
       type: 'input',
-      message: 'Tell me about yourself?',
-      name: 'bio',
+      name: 'project-name',
+      message: 'What is the name of your Project?',
+      
     },
     {
         type: 'input',
-        message: 'LinkedIn URL',
-        name: 'LinkedIn',
+        name: 'description',
+        message: 'Give a description of your project.',
+        
         },
     {
-        type: 'input',
-        message: 'GitHub URL',
-        name: 'GitHub',
+        type: 'list',
+        name: 'license',
+        message: 'Select License for your project:',
+        choices: ['']
+        
         },
   ])
   .then((answers) => {
 ​
     console.log(answers)
     
-    html = (`<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Added a link to Bootstrap-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <title>Document</title>
-    </head>
-        <body>
-            <h1 class="text-center">Name: ${answers.name}</h1>
-            <p class="text-center">Location: ${answers.location}</p>
-            <p class="text-center">Bio: ${answers.bio}</p>
-            <p class="text-center">LinkedIn: ${answers.LinkedIn}</p>
-            <p class="text-center">GitHub: ${answers.GitHub}</p>
-        </body>
-    </html>`)
+
 ​
-    fs.writeFile('index.html', html, function(err){
+    fs.writeFile('ReadMe.md', html, function(err){
         if (err) throw err;
         console.log('Saved!');
     })
