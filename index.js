@@ -25,14 +25,40 @@ inquirer
         name: 'description',
         message: 'Give a description of your project.',
         
-        },
+    },
+       
     {
         type: 'list',
         name: 'license',
         message: 'Select License for your project:',
-        choices: ['']
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'NONE']
         
-        },
+    },
+    {
+      type: 'input',
+      name: 'install',
+      message: 'Command to install dependency',
+            
+    },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'Command to run tests',
+        
+  },
+  {
+    type: 'input',
+    name: 'questions',
+    message: 'What does the user need to know about using this repository?',
+      
+  },
+  {
+    type: 'input',
+    name: 'contributions',
+    message: 'What does the user need to know about contributing to this repository?',
+      
+  },
+
   ])
   .then((answers) => {
 ​
