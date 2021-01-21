@@ -2,10 +2,14 @@
 const inquirer = require('inquirer');
 //calling the filesystem
 const fs = require('fs');
+//importing utilities mode
+const util = require('util')
+//using promisify to convert callback based method to promised based method
+const writeFileAsync = util.promisify(fs.writeFile);
 ​
 //Questions that will be prompted in terminal...
-inquirer
-  .prompt([
+const promptUser = () =>
+  inquirer.prompt([
     {
       type: 'input',
       name: 'username',
@@ -19,7 +23,7 @@ inquirer
     },
     {
       type: 'input',
-      name: 'project-name',
+      name: 'title',
       message: 'What is the name of your Project?',
       
     },
@@ -34,24 +38,30 @@ inquirer
         type: 'list',
         name: 'license',
         message: 'Select License for your project:',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'NONE']
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'NONE'],
         
     },
     {
       type: 'input',
       name: 'install',
       message: 'Command to install dependency',
+      default: function() {
+        return 'npm i'
+      },
             
     },
     {
       type: 'input',
       name: 'test',
       message: 'Command to run tests',
+      default: function () {
+        return 'npm test'
+        },
         
     },
     {
       type: 'input',
-      name: 'questions',
+      name: 'usage',
       message: 'What does the user need to know about using this repository?',
         
     },
@@ -63,15 +73,10 @@ inquirer
     },
 
     ])
-  .then((answers) => {
-​
-    console.log(answers)
     
 
-​
-    fs.writeFile('ReadMe.md', html, function(err){
-        if (err) throw err;
-        console.log('Saved!');
-    })
-​
-  });
+
+  promptUser()
+  .then((response) => writeFileAsync('README.md', template(response)))
+  .then(() => console.log('Success!'))
+  .catch((err) => console.error(err));
