@@ -74,7 +74,50 @@ const promptUser = () =>
 
     ])
     
+const template = (response) =>
+    `# **${response.title}**
 
+    [![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)](https://opensource.org/licenses${response.license})
+
+    ## DESCRIPTION:
+    
+    ${response.description}
+    
+    ## **TABLE OF CONTENTS**
+    1. [INSTALLATION INSTRUCTIONS] (####Installation Instructions)
+    2. [TEST INSTRUCTIONS] (####Test Instructions)
+    3. [USAGE INFORMATION] (####Usage Information)
+    4. [CONTRIBUTION GUIDELINES] (####Contribution Guidelines)
+    5. [LICENSE] (####License)
+    6. [QUESTIONS and CONTACT] (####Questions and Contact)
+
+    ### **INSTALLATION INSTRUCTIONS**
+
+    In order to properly install this project you will need to run ${response.install}.
+
+    ### **TEST INSTRUCTIONS**
+
+    In order to properly run a test you will need to put ${response.test} into your command line.
+
+    ### **USAGE INFORMATION**
+
+    Please note the following when using this project: ${response.usage}
+
+    ### **CONTRIBUTION GUIDELINES**
+
+    If contributing to this project please follow these guidelines: ${response.contribution}
+
+    ### **LICENSE**
+
+    This project is licensed under ${response.license} license.
+
+    ### **QUESTIONS and CONTACT**
+
+    Any questions regarding this project please contact me directly at ${response.email} or visit [${response.username}](https://github.com/${response.username}) 
+    
+    Project link 
+    [${response.title}](https://github.com/${response.username}/${response.title}) 
+    `
 
   promptUser()
   .then((response) => writeFileAsync('README.md', template(response)))
