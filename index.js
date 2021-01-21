@@ -34,7 +34,7 @@ const promptUser = () =>
     },
        
     {
-        type: 'list',
+        type: 'checkbox',
         name: 'license',
         message: 'Select License for your project:',
         choices: ['MIT', 'APACHE2.0', 'GPL3.0', 'BSD 3', 'UNLICENSED'],
@@ -74,7 +74,10 @@ const promptUser = () =>
     ])
     
 const template = (response) =>
-    `# **${response.title}**\n![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)\n
+    `# **${response.title}**
+    
+    ![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)
+
     ## DESCRIPTION:
     
     ${response.description}
@@ -114,8 +117,20 @@ const template = (response) =>
     Project link 
     [${response.title}](https://github.com/${response.username}/${response.title}) 
     `
-
-  promptUser()
-  .then((response) => writeFileAsync('README.md', template(response)))
-  .then(() => console.log('Success!'))
-  .catch((err) => console.error(err));
+// using async...
+  const init = async () => {
+    console.log('Answer prompts to create README...');
+    try {
+      const response = await promptUser();
+  
+      const md = template(response);
+  
+      await writeFileAsync('README.md', md);
+  
+      console.log('Success!');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
+  init();
