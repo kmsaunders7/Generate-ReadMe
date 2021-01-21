@@ -6,7 +6,6 @@ const fs = require('fs');
 const util = require('util')
 //using promisify to convert callback based method to promised based method
 const writeFileAsync = util.promisify(fs.writeFile);
-​
 //Questions that will be prompted in terminal...
 const promptUser = () =>
   inquirer.prompt([
@@ -75,9 +74,7 @@ const promptUser = () =>
     ])
     
 const template = (response) =>
-    `# **${response.title}**
-
-    [![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)](https://opensource.org/licenses${response.license})
+    `# **${response.title}**\n![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)](https://opensource.org/licenses${response.license})
 
     ## DESCRIPTION:
     
