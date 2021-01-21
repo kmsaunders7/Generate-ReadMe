@@ -37,7 +37,7 @@ const promptUser = () =>
         type: 'list',
         name: 'license',
         message: 'Select License for your project:',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'NONE'],
+        choices: ['MIT', 'APACHE2.0', 'GPL3.0', 'BSD 3', 'UNLICENSED'],
         
     },
     {
@@ -74,8 +74,7 @@ const promptUser = () =>
     ])
     
 const template = (response) =>
-    `# **${response.title}**\n![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)](https://opensource.org/licenses${response.license})
-
+    `# **${response.title}**\n![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)\n
     ## DESCRIPTION:
     
     ${response.description}
