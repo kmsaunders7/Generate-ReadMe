@@ -1,6 +1,6 @@
 # Generate-ReadMe
 
-![Video of commond line running the app](https://drive.google.com/file/d/1iYsEYsl7NpF2wPaSLV0o6xWDS5NVJ16W/view?usp=sharing)
+![Video of commond line running the app]<iframe src="https://drive.google.com/file/d/1iYsEYsl7NpF2wPaSLV0o6xWDS5NVJ16W/preview" width="640" height="480"></iframe>
 
 ## DESCRIPTION:
 
