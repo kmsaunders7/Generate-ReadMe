@@ -76,12 +76,12 @@ const promptUser = () =>
 const template = (response) =>
     `# **${response.title}**
     
-    ![License: ${response.license}] (https://img.shields.io/badge/License-${response.license}-blue.svg)
-
+    ![License: ${response.license}](https://img.shields.io/badge/License-${response.license}-blue.svg)
+    \n
     ## DESCRIPTION:
-    
+    \n
     ${response.description}
-    
+    \n
     ## **TABLE OF CONTENTS**
     1. [INSTALLATION INSTRUCTIONS] (####Installation Instructions)
     2. [TEST INSTRUCTIONS] (####Test Instructions)
@@ -89,34 +89,35 @@ const template = (response) =>
     4. [CONTRIBUTION GUIDELINES] (####Contribution Guidelines)
     5. [LICENSE] (####License)
     6. [QUESTIONS and CONTACT] (####Questions and Contact)
-
+    \n
     ### **INSTALLATION INSTRUCTIONS**
-
+    \n
     In order to properly install this project you will need to run ${response.install}.
-
+    \n
     ### **TEST INSTRUCTIONS**
-
+    \n
     In order to properly run a test you will need to put ${response.test} into your command line.
-
+    \n
     ### **USAGE INFORMATION**
-
+    \n
     Please note the following when using this project: ${response.usage}
-
+    \n
     ### **CONTRIBUTION GUIDELINES**
-
+    \n
     If contributing to this project please follow these guidelines: ${response.contribution}
-
+    \n
     ### **LICENSE**
-
+    \n
     This project is licensed under ${response.license} license.
-
+    \n
     ### **QUESTIONS and CONTACT**
-
+    \n
     Any questions regarding this project please contact me directly at ${response.email} or visit [${response.username}](https://github.com/${response.username}) 
-    
+    \n
     Project link 
-    [${response.title}](https://github.com/${response.username}/${response.title}) 
+    [${response.title}](https://${response.username}.github.io/${response.title}) 
     `
+
 // using async...
   const init = async () => {
     console.log('Answer prompts to create README...');
